@@ -9,7 +9,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class ChuckNorrisQuotesServiceImpl implements ChuckNorrisQuotesService {
 
-    private final ChuckNorrisQuotes quotes = new ChuckNorrisQuotes();
+    private final ChuckNorrisQuotes quotes;
+
+    /**
+     * Constructor
+     * @param quotes
+     *      A {@link ChuckNorrisQuotes} object that provides the quotes.
+     */
+    public ChuckNorrisQuotesServiceImpl(ChuckNorrisQuotes quotes) {
+        this.quotes = quotes;
+    }
 
     @Override
     public String getRandomQuote() {
